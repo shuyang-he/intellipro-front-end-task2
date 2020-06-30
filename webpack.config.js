@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/index.jsx'),
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
@@ -42,7 +42,7 @@ module.exports = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: 'index',
-      template: path(__dirname, './public/index.html'),
+      template: path.resolve(__dirname, './public/index.html'),
       inject: 'head',
       scriptLoading: 'defer'
     })

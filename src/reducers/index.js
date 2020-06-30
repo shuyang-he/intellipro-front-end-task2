@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import loginStatus from './LoginStatus';
+import todoList from './todoList';
 
 export default combineReducers({
-  loginStatus
+  todoList
 });

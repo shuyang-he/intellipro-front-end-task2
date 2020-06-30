@@ -1,0 +1,13 @@
+body {
+  margin: auto;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+body > div {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
