@@ -5,6 +5,7 @@ import TodoItem from './TodoItem';
 
 const todoList = ({
   data,
+  updateItem,
   deleteItem
 }) => {
   return (
@@ -12,7 +13,12 @@ const todoList = ({
       <ul>
         {data.map((element) => {
           return (
-            <TodoItem key={element.id} element={element} deleteItem={deleteItem}/>
+            <TodoItem
+              key={element.id}
+              element={element}
+              updateItem={updateItem}
+              deleteItem={deleteItem}
+            />
           );
         })}
       </ul>
@@ -22,6 +28,7 @@ const todoList = ({
 
 todoList.propTypes = {
   data: PropTypes.array,
+  updateItem: PropTypes.func,
   deleteItem: PropTypes.func
 };
 

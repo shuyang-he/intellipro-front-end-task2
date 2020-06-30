@@ -1,6 +1,6 @@
-export const newItem = () => {
+export const createItem = () => {
   return {
-    type: 'NEW_ITEM'
+    type: 'CREATE_ITEM'
   };
 };
 

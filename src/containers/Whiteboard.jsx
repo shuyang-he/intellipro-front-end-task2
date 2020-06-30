@@ -18,7 +18,10 @@ const Whiteboard = ({ children }) => {
 };
 
 Whiteboard.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ])
 };
 
 export default Whiteboard;

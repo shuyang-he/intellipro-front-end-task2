@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CreateForm from '../components/CreateForm';
-import { createHandler, createSubmit } from '../actions/createItem';
+import { createItem, createHandler, createSubmit } from '../actions/createItem';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,10 +10,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createHandler: (event) => {
+    createItem: () => {
+      dispatch(createItem());
+    },
+    handler: (event) => {
       dispatch(createHandler(event));
     },
-    createSubmit: () => {
+    submit: () => {
       dispatch(createSubmit());
     }
   };
