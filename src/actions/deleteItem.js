@@ -1,8 +1,8 @@
 export const deleteItem = (id) => {
   return {
-    type: 'DELETE_ITEM',
+    type: "DELETE_ITEM",
     payload: {
-      id: id
-    }
+      id: id,
+    },
   };
 };

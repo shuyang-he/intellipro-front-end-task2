@@ -1,27 +1,24 @@
-import PropTypes from 'prop-types';
-import containerCreator from '../hoc/containerCreator';
+import PropTypes from "prop-types";
+import containerCreator from "../hoc/containerCreator";
 
 const style = {
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  flexBasis: '75%'
+  height: "100%",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-around",
+  flexBasis: "75%",
 };
 
 const Whiteboard = ({ children }) => {
   return containerCreator({
-    id: 'whiteboard',
+    id: "whiteboard",
     style,
-    children
+    children,
   });
 };
 
 Whiteboard.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array
-  ])
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Whiteboard;

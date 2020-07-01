@@ -1,19 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Top from '../containers/Top';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import Top from "../containers/Top";
 
-const navigation = ({
-  page
-}) => {
-  let path = '';
-  let link = '';
-  if (page === 'home') {
-    path = '/create';
-    link = 'Create';
-  } else if (page === 'create') {
-    path = '/';
-    link = 'Home';
+const navigation = ({ page }) => {
+  let path = "";
+  let link = "";
+  if (page === "home") {
+    path = "/create";
+    link = "Create";
+  } else if (page === "create") {
+    path = "/";
+    link = "Home";
   }
   return (
     <Top>
@@ -24,7 +22,7 @@ const navigation = ({
 };
 
 navigation.propTypes = {
-  page: PropTypes.string
+  page: PropTypes.string,
 };
 
 export default navigation;

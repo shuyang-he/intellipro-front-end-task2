@@ -1,11 +1,11 @@
-import { connect } from 'react-redux';
-import TodoList from '../components/TodoList';
-import { updateItem } from '../actions/updateItem';
-import { deleteItem } from '../actions/deleteItem';
+import { connect } from "react-redux";
+import TodoList from "../components/TodoList";
+import { updateItem } from "../actions/updateItem";
+import { deleteItem } from "../actions/deleteItem";
 
 const mapStateToProps = (state) => {
   return {
-    data: state.todoList.data
+    data: state.todoList.data,
   };
 };
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     deleteItem: (id) => {
       dispatch(deleteItem(id));
-    }
+    },
   };
 };
 

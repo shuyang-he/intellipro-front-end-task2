@@ -1,13 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Whiteboard from '../containers/Whiteboard';
-import TodoItem from './TodoItem';
+import React from "react";
+import PropTypes from "prop-types";
+import Whiteboard from "../containers/Whiteboard";
+import TodoItem from "./TodoItem";
 
-const todoList = ({
-  data,
-  updateItem,
-  deleteItem
-}) => {
+const todoList = ({ data, updateItem, deleteItem }) => {
   return (
     <Whiteboard>
       <ul>
@@ -29,7 +25,7 @@ const todoList = ({
 todoList.propTypes = {
   data: PropTypes.array,
   updateItem: PropTypes.func,
-  deleteItem: PropTypes.func
+  deleteItem: PropTypes.func,
 };
 
 export default todoList;

@@ -1,11 +1,11 @@
-import React from 'react';
-import Navigation from './Navigation';
-import CreateForm from '../containers/CreateFormContainer';
+import React from "react";
+import Navigation from "./Navigation";
+import CreateForm from "../containers/CreateFormContainer";
 
 const create = () => {
   return (
     <>
-      <Navigation page='create' />
+      <Navigation page="create" />
       <CreateForm />
     </>
   );

@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import CreateForm from '../components/CreateForm';
-import { createItem, createHandler, createSubmit } from '../actions/createItem';
+import { connect } from "react-redux";
+import CreateForm from "../components/CreateForm";
+import { createItem, createHandler, createSubmit } from "../actions/createItem";
 
 const mapStateToProps = (state) => {
   return {
-    item: state.todoList.createItem
+    item: state.todoList.createItem,
   };
 };
 
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     submit: () => {
       dispatch(createSubmit());
-    }
+    },
   };
 };
 

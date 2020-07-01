@@ -1,11 +1,11 @@
-import React from 'react';
-import Navigation from './Navigation';
-import UpdateForm from '../containers/UpdateFormContainer';
+import React from "react";
+import Navigation from "./Navigation";
+import UpdateForm from "../containers/UpdateFormContainer";
 
 const update = () => {
   return (
     <>
-      <Navigation page='create' />
+      <Navigation page="create" />
       <UpdateForm />
     </>
   );

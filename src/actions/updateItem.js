@@ -1,23 +1,23 @@
 export const updateItem = (id) => {
   return {
-    type: 'UPDATE_ITEM',
+    type: "UPDATE_ITEM",
     payload: {
-      id: id
-    }
+      id: id,
+    },
   };
 };
 
 export const updateHandler = (event) => {
   return {
-    type: 'UPDATE_CHANGE',
+    type: "UPDATE_CHANGE",
     payload: {
-      body: event.target.value
-    }
+      body: event.target.value,
+    },
   };
 };
 
 export const updateSubmit = () => {
   return {
-    type: 'UPDATE_SUBMIT'
+    type: "UPDATE_SUBMIT",
   };
 };
