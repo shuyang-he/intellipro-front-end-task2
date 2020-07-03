@@ -1,20 +1,10 @@
-export const createItem = () => {
-  return {
-    type: "CREATE_ITEM",
-  };
-};
-
-export const createHandler = (event) => {
-  return {
-    type: "CREATE_CHANGE",
-    payload: {
-      body: event.target.value,
-    },
-  };
-};
-
-export const createSubmit = () => {
+let id = 0;
+export const createSubmit = (body) => {
   return {
     type: "CREATE_SUBMIT",
+    payload: {
+      id: id++,
+      body: body,
+    },
   };
 };

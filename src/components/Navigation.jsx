@@ -3,13 +3,16 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Top from "../containers/Top";
 
-const navigation = ({ page }) => {
+const Navigation = ({ page }) => {
   let path = "";
   let link = "";
   if (page === "home") {
     path = "/create";
     link = "Create";
   } else if (page === "create") {
+    path = "/";
+    link = "Home";
+  } else if (page === "update") {
     path = "/";
     link = "Home";
   }
@@ -21,8 +24,8 @@ const navigation = ({ page }) => {
   );
 };
 
-navigation.propTypes = {
+Navigation.propTypes = {
   page: PropTypes.string,
 };
 
-export default navigation;
+export default Navigation;

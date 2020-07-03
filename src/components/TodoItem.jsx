@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect } from "react-router-dom";
 
-class todoItem extends Component {
+class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,11 @@ class todoItem extends Component {
         <h2>{this.props.element.body}</h2>
         <button
           onClick={() => {
-            this.props.updateItem(this.props.element.id);
+            this.props.updateItem({
+              id: this.props.element.id,
+              body: this.props.element.body,
+              completed: this.props.element.completed,
+            });
             this.setState({ redirect: true });
           }}
         >
@@ -36,10 +40,10 @@ class todoItem extends Component {
   }
 }
 
-todoItem.propTypes = {
+TodoItem.propTypes = {
   element: PropTypes.object,
   updateItem: PropTypes.func,
   deleteItem: PropTypes.func,
 };
 
-export default todoItem;
+export default TodoItem;

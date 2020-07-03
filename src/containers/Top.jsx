@@ -1,5 +1,5 @@
+import React from "react";
 import PropTypes from "prop-types";
-import containerCreator from "../hoc/containerCreator";
 
 const style = {
   height: "100%",
@@ -12,11 +12,11 @@ const style = {
 };
 
 const Top = ({ children }) => {
-  return containerCreator({
-    id: "top",
-    style,
-    children,
-  });
+  return (
+    <div id="top" style={style}>
+      {children}
+    </div>
+  );
 };
 
 Top.propTypes = {

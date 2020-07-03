@@ -1,24 +1,68 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Form from "./Form";
+import Whiteboard from "../containers/Whiteboard";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { createSubmit } from "../actions/createItem";
 
-const createForm = ({ item, handler, createItem, submit }) => {
-  return (
-    <Form
-      label="New Item"
-      item={item}
-      handler={handler}
-      createItem={createItem}
-      submit={submit}
-    />
-  );
-};
+class CreateForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirect: false,
+      body: "",
+    };
+    this.handler = this.handler.bind(this);
+  }
 
-createForm.propTypes = {
-  item: PropTypes.object,
+  handler(name, event) {
+    this.setState({ [name]: event.target.value });
+  }
+
+  render() {
+    return this.state.redirect ? (
+      <Redirect to="/" />
+    ) : (
+      <Whiteboard>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            this.props.submit(this.state.body);
+            this.setState({ redirect: true });
+          }}
+        >
+          <label>New Item</label>
+          <input
+            type="text"
+            onChange={(event) => {
+              this.handler("body", event);
+            }}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </Whiteboard>
+    );
+  }
+}
+
+CreateForm.propTypes = {
   handler: PropTypes.func,
   createItem: PropTypes.func,
   submit: PropTypes.func,
 };
 
-export default createForm;
+const mapStateToProps = (state) => {
+  return {
+    item: state.todoList,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submit: (body) => {
+      dispatch(createSubmit(body));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateForm);

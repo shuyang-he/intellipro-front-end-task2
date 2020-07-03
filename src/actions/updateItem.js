@@ -1,8 +1,10 @@
-export const updateItem = (id) => {
+export const updateItem = ({ id, body, completed }) => {
   return {
     type: "UPDATE_ITEM",
     payload: {
       id: id,
+      body: body,
+      completed: completed,
     },
   };
 };
@@ -16,8 +18,13 @@ export const updateHandler = (event) => {
   };
 };
 
-export const updateSubmit = () => {
+export const updateSubmit = ({ id, body, completed }) => {
   return {
     type: "UPDATE_SUBMIT",
+    payload: {
+      id: id,
+      body: body,
+      completed: completed,
+    },
   };
 };
