@@ -47,7 +47,6 @@ class CreateForm extends Component {
 
 CreateForm.propTypes = {
   handler: PropTypes.func,
-  createItem: PropTypes.func,
   submit: PropTypes.func,
 };
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class TodoItem extends Component {
   constructor(props) {
@@ -12,22 +12,11 @@ class TodoItem extends Component {
 
   render() {
     return this.state.redirect ? (
-      <Redirect to="/update" />
+      <Redirect to={"/update/" + this.props.element.id} />
     ) : (
       <li>
         <h2>{this.props.element.body}</h2>
-        <button
-          onClick={() => {
-            this.props.updateItem({
-              id: this.props.element.id,
-              body: this.props.element.body,
-              completed: this.props.element.completed,
-            });
-            this.setState({ redirect: true });
-          }}
-        >
-          Update
-        </button>
+        <Link to={"/update/" + this.props.element.id}>Update</Link>
         <button
           onClick={() => {
             this.props.deleteItem(this.props.element.id);
@@ -42,7 +31,6 @@ class TodoItem extends Component {
 
 TodoItem.propTypes = {
   element: PropTypes.object,
-  updateItem: PropTypes.func,
   deleteItem: PropTypes.func,
 };
 

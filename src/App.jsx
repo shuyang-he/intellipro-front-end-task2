@@ -1,9 +1,11 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import TodoList from "./components/TodoList";
 import CreateForm from "./components/CreateForm";
 import UpdateForm from "./components/UpdateForm";
+import UpdatePage from "./components/UpdatePage";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -12,13 +14,15 @@ const App = () => {
         <Navigation page="home" />
         <TodoList />
       </Route>
-      <Route path="/create" exact>
+      <Route path="/create">
         <Navigation page="create" />
         <CreateForm />
       </Route>
-      <Route path="/update" exact>
-        <Navigation page="update" />
-        <UpdateForm />
+      <Route path="/update/:id">
+        <UpdatePage />
+      </Route>
+      <Route path="*">
+        <NotFound />
       </Route>
     </Switch>
   );

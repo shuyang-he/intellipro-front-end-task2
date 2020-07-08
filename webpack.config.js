@@ -2,13 +2,16 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+const PORT = process.env.PORT || 3000;
+const ASSET_PATH = process.env.ASSET_PATH || "/";
+
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "./src/index.jsx"),
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
-    port: 3000,
+    port: PORT,
     historyApiFallback: true,
     proxy: {
       "/api": "http://localhost:8000",
@@ -50,5 +53,6 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist"),
+    publicPath: ASSET_PATH,
   },
 };
