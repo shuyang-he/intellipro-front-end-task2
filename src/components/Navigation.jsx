@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Top from "../containers/Top";
 
-const Navigation = ({ page }) => {
+const Navigation = ({ location }) => {
+  const pathname = location.pathname;
   let path = "";
   let link = "";
-  if (page === "home") {
+  if (pathname === "/") {
     path = "/create";
     link = "Create";
-  } else if (page === "create") {
+  } else if (pathname === "/create") {
     path = "/";
     link = "Home";
-  } else if (page === "update") {
+  } else if (pathname === "/update") {
     path = "/";
     link = "Home";
   }
