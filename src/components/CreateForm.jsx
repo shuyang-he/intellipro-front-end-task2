@@ -5,6 +5,32 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createSubmit } from "../actions/createItem";
 
+const style = {
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "20px",
+  },
+  content: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  label: {
+    fontSize: "large",
+    fontWeight: "bold",
+    marginBottom: "10px",
+  },
+  input: {
+    marginBottom: "10px",
+    padding: "5px",
+  },
+  button: {
+    backgroundColor: "#3366ff",
+    padding: "0.5em",
+  },
+};
+
 class CreateForm extends Component {
   constructor(props) {
     super(props);
@@ -25,20 +51,26 @@ class CreateForm extends Component {
     ) : (
       <Whiteboard>
         <form
+          style={style.form}
           onSubmit={(event) => {
             event.preventDefault();
             this.props.submit(this.state.body);
             this.setState({ redirect: true });
           }}
         >
-          <label>New Item</label>
-          <input
-            type="text"
-            onChange={(event) => {
-              this.handler("body", event);
-            }}
-          />
-          <button type="submit">Submit</button>
+          <div style={style.content}>
+            <label style={style.label}>New Item</label>
+            <input
+              style={style.input}
+              type="text"
+              onChange={(event) => {
+                this.handler("body", event);
+              }}
+            />
+          </div>
+          <button style={style.button} type="submit">
+            Submit
+          </button>
         </form>
       </Whiteboard>
     );

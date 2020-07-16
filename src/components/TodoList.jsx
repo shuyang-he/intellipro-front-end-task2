@@ -5,10 +5,16 @@ import TodoItem from "./TodoItem";
 import { connect } from "react-redux";
 import { deleteItem } from "../actions/deleteItem";
 
+const style = {
+  display: "flex",
+  flexDirection: "row",
+  listStyleType: "none",
+};
+
 const TodoList = ({ data, updateItem, deleteItem }) => {
   return (
     <Whiteboard>
-      <ul>
+      <ul style={style}>
         {data.map((element) => {
           return (
             <TodoItem

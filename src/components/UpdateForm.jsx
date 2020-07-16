@@ -5,6 +5,32 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateSubmit } from "../actions/updateItem";
 
+const style = {
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    margin: "20px",
+  },
+  content: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  label: {
+    fontSize: "large",
+    fontWeight: "bold",
+    marginBottom: "10px",
+  },
+  input: {
+    marginBottom: "10px",
+    padding: "5px",
+  },
+  button: {
+    backgroundColor: "#3366ff",
+    padding: "0.5em",
+  },
+};
+
 class UpdateForm extends Component {
   constructor(props) {
     super(props);
@@ -44,6 +70,7 @@ class UpdateForm extends Component {
     ) : (
       <Whiteboard>
         <form
+          style={style.form}
           onSubmit={(event) => {
             event.preventDefault();
             this.props.submit({
@@ -53,15 +80,20 @@ class UpdateForm extends Component {
             this.setState({ redirect: true });
           }}
         >
-          <label>Update Item {this.state.id}</label>
-          <input
-            type="text"
-            value={this.state.body}
-            onChange={(event) => {
-              this.handler("body", event);
-            }}
-          />
-          <button type="submit">Submit</button>
+          <div style={style.content}>
+            <label style={style.label}>Update Item {this.state.id}</label>
+            <input
+              style={style.input}
+              type="text"
+              value={this.state.body}
+              onChange={(event) => {
+                this.handler("body", event);
+              }}
+            />
+          </div>
+          <button style={style.button} type="submit">
+            Submit
+          </button>
         </form>
       </Whiteboard>
     );

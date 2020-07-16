@@ -5,7 +5,7 @@ const style = {
   height: "100%",
   display: "flex",
   flexDirection: "row",
-  justifyContent: "space-around",
+  justifyContent: "center",
   flexBasis: "75%",
 };
 

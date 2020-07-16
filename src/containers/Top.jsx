@@ -8,7 +8,7 @@ const style = {
   justifyContent: "center",
   alignItems: "center",
   flexBasis: "20%",
-  backgroundColor: "lightgray",
+  backgroundColor: "#0033cc",
 };
 
 const Top = ({ children }) => {
