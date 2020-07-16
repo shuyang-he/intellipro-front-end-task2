@@ -1,35 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Whiteboard from "../containers/Whiteboard";
+import Whiteboard from "../../containers/Whiteboard";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { createSubmit } from "../actions/createItem";
-
-const style = {
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    margin: "20px",
-  },
-  content: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  label: {
-    fontSize: "large",
-    fontWeight: "bold",
-    marginBottom: "10px",
-  },
-  input: {
-    marginBottom: "10px",
-    padding: "5px",
-  },
-  button: {
-    backgroundColor: "#3366ff",
-    padding: "0.5em",
-  },
-};
+import { createSubmit } from "../../actions/createItem";
+import style from "./CreateForm.css";
 
 class CreateForm extends Component {
   constructor(props) {
@@ -51,24 +26,24 @@ class CreateForm extends Component {
     ) : (
       <Whiteboard>
         <form
-          style={style.form}
+          className={style.form}
           onSubmit={(event) => {
             event.preventDefault();
             this.props.submit(this.state.body);
             this.setState({ redirect: true });
           }}
         >
-          <div style={style.content}>
-            <label style={style.label}>New Item</label>
+          <div className={style.content}>
+            <label className={style.label}>New Item</label>
             <input
-              style={style.input}
+              className={style.input}
               type="text"
               onChange={(event) => {
                 this.handler("body", event);
               }}
             />
           </div>
-          <button style={style.button} type="submit">
+          <button className={style.button} type="submit">
             Submit
           </button>
         </form>

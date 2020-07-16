@@ -1,35 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Whiteboard from "../containers/Whiteboard";
+import Whiteboard from "../../containers/Whiteboard";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { updateSubmit } from "../actions/updateItem";
-
-const style = {
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    margin: "20px",
-  },
-  content: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  label: {
-    fontSize: "large",
-    fontWeight: "bold",
-    marginBottom: "10px",
-  },
-  input: {
-    marginBottom: "10px",
-    padding: "5px",
-  },
-  button: {
-    backgroundColor: "#3366ff",
-    padding: "0.5em",
-  },
-};
+import { updateSubmit } from "../../actions/updateItem";
+import style from "./UpdateForm.css";
 
 class UpdateForm extends Component {
   constructor(props) {
@@ -70,7 +45,7 @@ class UpdateForm extends Component {
     ) : (
       <Whiteboard>
         <form
-          style={style.form}
+          className={style.form}
           onSubmit={(event) => {
             event.preventDefault();
             this.props.submit({
@@ -80,10 +55,10 @@ class UpdateForm extends Component {
             this.setState({ redirect: true });
           }}
         >
-          <div style={style.content}>
-            <label style={style.label}>Update Item {this.state.id}</label>
+          <div className={style.content}>
+            <label className={style.label}>Update Item {this.state.id}</label>
             <input
-              style={style.input}
+              className={style.input}
               type="text"
               value={this.state.body}
               onChange={(event) => {
@@ -91,7 +66,7 @@ class UpdateForm extends Component {
               }}
             />
           </div>
-          <button style={style.button} type="submit">
+          <button className={style.button} type="submit">
             Submit
           </button>
         </form>

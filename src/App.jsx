@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import TodoList from "./components/TodoList";
-import CreateForm from "./components/CreateForm";
-import UpdateForm from "./components/UpdateForm";
-import NotFound from "./components/NotFound";
+import Navigation from "./components/Navigation/Navigation";
+import TodoList from "./components/TodoList/TodoList";
+import CreateForm from "./components/CreateForm/CreateForm";
+import UpdateForm from "./components/UpdateForm/UpdateForm";
+import NotFound from "./components/NotFound/NotFound";
 
 const App = () => {
   return (

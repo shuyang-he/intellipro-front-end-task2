@@ -1,0 +1,16 @@
+.header {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  flex-grow: 1;
+}
+
+.buttons {
+  position: "fixed";
+  padding: 20px;
+}
+
+.button {
+  background-color: rgb(255, 250, 250);
+  padding: 0.5em;
+}

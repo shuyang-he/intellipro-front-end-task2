@@ -6,7 +6,7 @@ const style = {
   display: "flex",
   flexDirection: "row",
   justifyContent: "center",
-  flexBasis: "75%",
+  flexBasis: "90%",
 };
 
 const Whiteboard = ({ children }) => {

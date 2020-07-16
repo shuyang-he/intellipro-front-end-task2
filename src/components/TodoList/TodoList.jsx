@@ -1,20 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Whiteboard from "../containers/Whiteboard";
-import TodoItem from "./TodoItem";
+import Whiteboard from "../../containers/Whiteboard";
+import TodoItem from "../TodoItem/TodoItem";
 import { connect } from "react-redux";
-import { deleteItem } from "../actions/deleteItem";
-
-const style = {
-  display: "flex",
-  flexDirection: "row",
-  listStyleType: "none",
-};
+import { deleteItem } from "../../actions/deleteItem";
+import style from "./TodoList.css";
 
 const TodoList = ({ data, updateItem, deleteItem }) => {
   return (
     <Whiteboard>
-      <ul style={style}>
+      <ul className={style.ul}>
         {data.map((element) => {
           return (
             <TodoItem

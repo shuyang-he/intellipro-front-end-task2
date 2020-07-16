@@ -1,23 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
-import Top from "../containers/Top";
-
-const style = {
-  header: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexGrow: 1,
-  },
-  buttons: {
-    padding: "20px",
-  },
-  button: {
-    backgroundColor: "#3366ff",
-    padding: "0.5em",
-  },
-};
+import Top from "../../containers/Top";
+import style from "./Navigation.css";
 
 const Navigation = () => {
   const location = useLocation();
@@ -39,11 +24,11 @@ const Navigation = () => {
   }
   return (
     <Top>
-      <div style={style.header}>
+      <div className={style.header}>
         <h1>Todo List</h1>
       </div>
-      <div style={style.buttons}>
-        <button style={style.button}>
+      <div className={style.buttons}>
+        <button className={style.button}>
           <Link to={path}>{link}</Link>
         </button>
       </div>

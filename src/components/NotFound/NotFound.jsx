@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Top from "../containers/Top";
-import Whiteboard from "../containers/Whiteboard";
+import Top from "../../containers/Top";
+import Whiteboard from "../../containers/Whiteboard";
 
 const NotFound = () => {
   return (
